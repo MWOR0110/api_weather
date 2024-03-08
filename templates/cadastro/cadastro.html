@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Cadastro Meteorológico</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="#">Cadastro</a></li>
+                <!--<li><a href="#">Conta do Usuário</a></li> -->
+                <!-- <li><a href="#">Editar Item Cadastrado</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="meteorologico-container">
+            <h1>Cadastro Meteorológico</h1>
+            <form action="#" method="post">
+                <label for="temperature">Temperatura:</label>
+                <input type="text" id="temperature" name="temperature" required>
+
+                <label for="pressure">Pressão Atmosférica:</label>
+                <input type="text" id="pressure" name="pressure" required>
+
+                <label for="humidity">Umidade do Ar:</label>
+                <input type="text" id="humidity" name="humidity" required>
+
+                <label for="rain-index">Índice de Chuva:</label>
+                <input type="text" id="rain-index" name="rain-index" required>
+
+                <label for="weather-condition">Condição Meteorológica:</label>
+                <input type="text" id="weather-condition" name="weather-condition" required>
+
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" name="city" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
