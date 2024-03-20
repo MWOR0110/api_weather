@@ -1,27 +1,40 @@
+# repositories.py
 from django.conf import settings
 import pymongo
 
 class WeatherRepository:
+    collection = ''
 
-    colletion = ""
-    def __init__(self) -> None:
-        self.colletion = colletionName
+    def __init__(self, collectionName) -> None:
+        self.collection = collectionName
 
-    def getConnetion(self):
+    def getConnection(self):
         client = pymongo.MongoClient(getattr(settings, "MONGO_CONNECTION_STRING"))
-        connection = pymongo.MongoClient(getattr(settings, "MONGO_DATABASE_NAME"))
-   
-   
-    def getColletion(self):
-        conn = self.getColletion()
-        collection = conn[self.colletion]
-
+        connection = client[getattr(settings, "MONGO_DATABASE_NAME")]
+        return connection
+    
+    def getCollection(self):
+        conn = self.getConnection()
+        collection = conn[self.collection]
         return collection
     
+    def getById(self, id):
+        document = self.getCollection().find_one({"_id": id})
+        return document
+    
     def getAll(self):
-        document= self.getColletion().find({})
-        return object
-
+        documents = self.getCollection().find({})
+        return documents
+    
+    def getByAttribute(self, attribute, value):
+        documents = self.getCollection().find({attribute: value})
+        return documents
+    
     def insert(self, document):
-        self.getColletion
-        
+        self.getCollection().insert_one(document)
+
+    def delete(self, id):
+        self.getCollection().delete_one({"_id": id})
+
+    def deleteAll(self):
+        self.getCollection().delete_many({})
