@@ -1,4 +1,3 @@
-# views.py
 from datetime import datetime
 from django.views import View
 from django.shortcuts import render, redirect
