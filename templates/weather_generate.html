@@ -3,13 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Generate Weather</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: cornflowerblue;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-container {
+            width: 50%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>Generate Weather</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+    <div class="form-container"> <!-- Adicionei uma classe ao redor do formulário -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

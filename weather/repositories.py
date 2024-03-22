@@ -1,4 +1,3 @@
-# repositories.py
 from django.conf import settings
 import pymongo
 
